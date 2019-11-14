@@ -1,7 +1,7 @@
 FROM rscale/ubuntu-base
 
-ARG $JQ_VERSION
-ARG $YQ_VERSION
+ARG JQ_VERSION
+ARG YQ_VERSION
 
 RUN echo "jq: ${JQ_VERSION}" && \
 	echo "yq: ${YQ_VERSION}" &&\

@@ -1,0 +1,59 @@
+---
+resource_types:
+- name: slack-notification
+  type: docker-image
+  source:
+    repository: cfcommunity/slack-notification-resource
+
+resources:
+
+- name: slack
+  type: slack-notification
+  source:
+    url: ((slack_webhook_url))
+
+- name: base-image
+  type: docker-image
+  source:
+    repository: ubuntu
+
+- name: dockerfile
+  type: git
+  source:
+    uri: https://github.com/resilientscale/docker-images.git
+    branch: master
+    username: ((github_username))
+    password: ((github_password))
+    paths: [ubuntu-base/Dockerfile]
+
+- name: docker-image
+  type: docker-image
+  source:
+    repository: rscale/ubuntu-base
+    username: ((docker_hub_user))
+    password: ((docker_hub_password))
+
+jobs:
+- name: build
+  serial_groups: [release]
+  plan:
+  - in_parallel:
+    - get: base-image
+      trigger: true
+    - get: dockerfile
+      trigger: true
+      params: {depth: 1}
+  - put: docker-image
+    params:
+      build: dockerfile/ubuntu-base
+    on_success:
+      put: slack
+      params:
+        username: "rscale-ci"
+        text: "SUCCESS: New ubuntu-base image published to docker hub at rscale/ubuntu-base. (https://ci.aws.rscale.io/teams/docker-images/pipelines/ubuntu-base)"
+    on_failure:
+      put: slack
+      params: 
+        username: "rscale-ci"
+        text: "FAILURE: Creation of new ubuntu-base image failed. (https://ci.aws.rscale.io/teams/docker-images/pipelines/ubuntu-base)"
+  

@@ -1,16 +1,18 @@
 ---
-# resource_types:
-# - name: slack-notification
-#   type: docker-image
-#   source:
-#     repository: cfcommunity/slack-notification-resource
+
+resource_types:
+
+- name: slack-notification
+  type: docker-image
+  source:
+    repository: cfcommunity/slack-notification-resource
 
 resources:
 
-# - name: slack
-#   type: slack-notification
-#   source:
-#     url: ((slack_webhook_url))
+- name: slack
+  type: slack-notification
+  source:
+    url: ((slack_webhook_url))
 
 - name: base-image
   type: docker-image
@@ -42,6 +44,7 @@ resources:
   source:
     owner: stedolan
     repository: jq
+    access_token: ((github_password))
   check_every: 30m
 
 - name: yq-release
@@ -49,14 +52,15 @@ resources:
   source:
     owner: mikefarah
     repository: yq
+    access_token: ((github_password))
   check_every: 30m
 
-# - name: docker-image
-#   type: docker-image
-#   source:
-#     repository: rscale/ubuntu-parsers
-#     username: ((docker_hub_user))
-#     password: ((docker_hub_password))
+- name: docker-image
+  type: docker-image
+  source:
+    repository: rscale/ubuntu-parsers
+    username: ((docker_hub_user))
+    password: ((docker_hub_password))
 
 jobs:
 - name: build
@@ -76,20 +80,19 @@ jobs:
       params: {depth: 1}
   - task: prepare-envars
     file: tasks/ubuntu-parsers/tasks/prepare-envars.yml
-
-
-  # - put: docker-image
-  #   params:
-  #     build: dockerfile/ubuntu-parsers
-  #     build_args_file: 
-  #   on_success:
-  #     put: slack
-  #     params:
-  #       username: "rscale-ci"
-  #       text: "SUCCESS: New ubuntu-parsers image published to docker hub at rscale/ubuntu-parsers. (https://ci.aws.rscale.io/teams/docker-images/pipelines/ubuntu-parsers)"
-  #   on_failure:
-  #     put: slack
-  #     params: 
-  #       username: "rscale-ci"
-  #       text: "FAILURE: Creation of new ubuntu-parsers image failed. (https://ci.aws.rscale.io/teams/docker-images/pipelines/ubuntu-parsers)"
+  - put: docker-image
+    params:
+      build: dockerfile/ubuntu-parsers
+      build_args_file: envars/env.json
+      labels_file: envars/env.json
+    on_success:
+      put: slack
+      params:
+        username: "rscale-ci"
+        text: "SUCCESS: New ubuntu-parsers image published to docker hub at rscale/ubuntu-parsers. (https://ci.aws.rscale.io/teams/docker-images/pipelines/ubuntu-parsers)"
+    on_failure:
+      put: slack
+      params: 
+        username: "rscale-ci"
+        text: "FAILURE: Creation of new ubuntu-parsers image failed. (https://ci.aws.rscale.io/teams/docker-images/pipelines/ubuntu-parsers)"
   

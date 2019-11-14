@@ -1,0 +1,19 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: rscale/ubuntu-base
+    tag: 'latest'
+
+inputs:
+- name: jq-release
+- name: yq-release
+- name: tasks
+
+outputs:
+- name: envars
+
+run:
+  path: tasks/ubuntu-parsers/tasks/prepare-envars.sh

@@ -72,7 +72,7 @@ jobs:
     file: tasks/ubuntu-fly/tasks/prepare-envars.yml
   - put: docker-image
     params:
-      build: dockerfile/ubuntu-parsers
+      build: dockerfile/ubuntu-fly
       build_args_file: envars/env.json
       labels_file: envars/env.json
       tag_file: fly-release/tag

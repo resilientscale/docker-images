@@ -13,6 +13,7 @@ inputs:
 
 outputs:
 - name: envars
+- name: tag_file
 
 run:
   path: tasks/ubuntu-fly/tasks/prepare-envars.sh

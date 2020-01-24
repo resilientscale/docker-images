@@ -75,7 +75,7 @@ jobs:
       build: dockerfile/ubuntu-fly
       build_args_file: envars/env.json
       labels_file: envars/env.json
-      tag_file: fly-release/tag
+      tag_file: tag_file/tag
       tag_as_latest: true
     on_success:
       put: slack

@@ -27,7 +27,7 @@ resources:
     username: ((github_username))
     password: ((github_password))
     paths: [ubuntu-parsers/Dockerfile]
-  # check_every: 30m
+  check_every: 30m
 
 - name: tasks
   type: git
@@ -37,7 +37,7 @@ resources:
     username: ((github_username))
     password: ((github_password))
     paths: [ubuntu-parsers/tasks/*]
-  # check_every: 30m
+  check_every: 30m
 
 - name: jq-release
   type: github-release

@@ -16,6 +16,7 @@ resources:
   type: docker-image
   source:
     repository: ubuntu
+  check_every: 60m
 
 - name: dockerfile
   type: git
@@ -25,6 +26,7 @@ resources:
     username: ((github_username))
     password: ((github_password))
     paths: [ubuntu-base/Dockerfile]
+  check_every: 60m
 
 - name: docker-image
   type: docker-image

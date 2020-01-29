@@ -8,6 +8,7 @@ image_resource:
     tag: 'latest'
 
 inputs:
+- name: jq-release
 - name: tasks
 
 outputs:

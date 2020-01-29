@@ -4,10 +4,10 @@ jq_tag=$(cat jq-release/tag)
 
 echo '{ "JQ_VERSION": "'"${jq_tag}"'" }' > envars/env.json
 
-tag="${jq_tag//jq-}"
+# tag="${jq_tag//jq-}"
 
-echo "${tag}" > tag_file/tag
+echo "${jq_tag}" > tag_file/tag
 
-echo "envars" cat envars/env.json
+# echo "envars" cat envars/env.json
 
-echo "tag_file/tag: ${tag}" 
+# echo "tag_file/tag: ${tag}" 

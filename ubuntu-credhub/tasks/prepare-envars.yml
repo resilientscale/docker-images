@@ -1,0 +1,19 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: rscale/ubuntu-base
+    tag: 'latest'
+
+inputs:
+- name: credhub-release
+- name: tasks
+
+outputs:
+- name: envars
+- name: tag_file
+
+run:
+  path: tasks/ubuntu-credhub/tasks/prepare-envars.sh

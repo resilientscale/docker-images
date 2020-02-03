@@ -1,0 +1,6 @@
+---
+base_image_name: "rscale/ubuntu-base" # The name of the base image  as specified in the Dockerfile. Used to trigger new builds when the base image updates.
+image_name:  # The name of the new image being built
+
+github_release_owner: # The name of the repository owner/org of the release being installed. Used to trigger new builds when the base image updates.
+github_release_repository: # The name of the repository of the release being installed. Used to trigger new builds when the base image updates.

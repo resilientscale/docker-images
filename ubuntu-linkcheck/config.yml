@@ -1,0 +1,6 @@
+---
+base_image_name: "rscale/ubuntu-base" 
+image_name: "ubuntu-linkcheck"
+
+github_release_owner: filiph
+github_release_repository: linkcheck

@@ -1,0 +1,6 @@
+---
+base_image_name: "rscale/ubuntu-base" 
+image_name: "ubuntu-cf"
+
+github_release_owner: cloudfoundry
+github_release_repository: cli

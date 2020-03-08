@@ -25,3 +25,5 @@ fly -t $target sp -p ubuntu-credhub -c ${this_directory}/ubuntu-credhub/pipeline
 fly -t $target sp -p ubuntu-linkcheck -c ${this_directory}/ubuntu-with-github-release/pipeline.yml -l ${this_directory}/ubuntu-linkcheck/config.yml --non-interactive
 
 fly -t $target sp -p ubuntu-cf -c ${this_directory}/ubuntu-with-github-release/pipeline.yml -l ${this_directory}/ubuntu-cf/config.yml --non-interactive
+
+fly -t $target sp -p ubuntu-go -c ${this_directory}/ubuntu-with-github-release/pipeline.yml -l ${this_directory}/ubuntu-go/config.yml --non-interactive

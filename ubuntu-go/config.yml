@@ -1,0 +1,6 @@
+---
+base_image_name: "rscale/ubuntu-base" 
+image_name: "ubuntu-go"
+
+github_release_owner: golang
+github_release_repository: go

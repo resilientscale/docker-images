@@ -1,0 +1,6 @@
+---
+base_image_name: "rscale/ubuntu-base" 
+image_name: "ubuntu-hugo"
+
+github_release_owner: gohugoio
+github_release_repository: hugo

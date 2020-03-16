@@ -27,3 +27,7 @@ fly -t $target sp -p ubuntu-linkcheck -c ${this_directory}/ubuntu-with-github-re
 fly -t $target sp -p ubuntu-cf -c ${this_directory}/ubuntu-with-github-release/pipeline.yml -l ${this_directory}/ubuntu-cf/config.yml --non-interactive
 
 fly -t $target sp -p ubuntu-go -c ${this_directory}/ubuntu-with-github-release/pipeline.yml -l ${this_directory}/ubuntu-go/config.yml --non-interactive
+
+fly -t $target sp -p ubuntu-hugo -c ${this_directory}/ubuntu-with-github-release/pipeline.yml -l ${this_directory}/ubuntu-hugo/config.yml --non-interactive
+
+fly -t $target sp -p ubuntu-hugo-extended -c ${this_directory}/ubuntu-with-github-release/pipeline.yml -l ${this_directory}/ubuntu-hugo-extended/config.yml --non-interactive

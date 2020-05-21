@@ -1,7 +1,5 @@
 #!/bin/bash
 
-export PS1="$ "
-
-
-
+/usr/local/bin/cf-setup.sh
+clear
 echo "Provisioning complete. Please proceed with the tutorial."

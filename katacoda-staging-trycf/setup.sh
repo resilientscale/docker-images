@@ -1,6 +1,6 @@
 #!/bin/bash
 
-/usr/local/bin/cf-setup.sh
+/usr/local/bin/scenario-setup.sh
 
 clear
 

@@ -1,7 +1,12 @@
 #!/bin/bash
 
-/usr/local/bin/scenario-setup.sh
+/home/tutorial/.cf-login.sh
 
 clear
 
-echo "Provisioning complete. Please proceed with the tutorial."
+msg=$(cf t)
+if [ "$msg" == *"Not logged in."* ]; then
+	echo "Provisioning failed. Please refresh this page to try again."
+else
+	echo "Provisioning complete. Please proceed with the tutorial."
+fi

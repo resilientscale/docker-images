@@ -1,6 +1,6 @@
 ---
 base_image_name: "rscale/ubuntu-jq" 
-image_name: "ubuntu-cf"
+image_name: "ubuntu-cf6"
 
 github_release_owner: cloudfoundry
 github_release_repository: cli

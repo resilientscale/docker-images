@@ -43,7 +43,7 @@ resources:
     branch: master
     username: ((github_username))
     password: ((github_password))
-    paths: [ubuntu-jq/tasks/*]
+    paths: [ubuntu-base/tasks/*]
   check_every: 60m
 
 - name: docker-image

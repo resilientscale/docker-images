@@ -28,24 +28,6 @@ resources:
     paths: [ubuntu-base/Dockerfile]
   check_every: 60m
 
-- name: jq-release
-  type: github-release
-  source:
-    owner: stedolan
-    repository: jq
-    access_token: ((github_password))
-  check_every: 60m
-
-- name: tasks
-  type: git
-  source:
-    uri: https://github.com/resilientscale/docker-images.git
-    branch: master
-    username: ((github_username))
-    password: ((github_password))
-    paths: [ubuntu-base/tasks/*]
-  check_every: 60m
-
 - name: docker-image
   type: docker-image
   source:
@@ -63,19 +45,9 @@ jobs:
     - get: dockerfile
       trigger: true
       params: {depth: 1}
-    - get: jq-release
-      trigger: true
-    - get: tasks
-      params: {depth: 1}
-  - task: prepare-envars
-    file: tasks/ubuntu-base/tasks/prepare-envars.yml
   - put: docker-image
     params:
       build: dockerfile/ubuntu-base
-      build_args_file: envars/env.json
-      labels_file: envars/env.json
-      tag_file: tag_file/tag
-      tag_as_latest: true
     on_success:
       put: slack
       params:

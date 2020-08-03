@@ -1,0 +1,6 @@
+---
+base_image_name: "rscale/ubuntu-jq" 
+image_name: "ubuntu-gcp-service-broker"
+
+github_release_owner: GoogleCloudPlatform
+github_release_repository: gcp-service-broker

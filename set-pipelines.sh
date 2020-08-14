@@ -39,3 +39,5 @@ fly -t $target sp -p katacoda-staging-trycf -c ${this_directory}/ubuntu-with-git
 
 
 fly -t $target sp -p ubuntu-gcp-service-broker -c ${this_directory}/ubuntu-with-github-release/pipeline.yml -l ${this_directory}/ubuntu-gcp-service-broker/config.yml --non-interactive
+
+fly -t $target sp -p ubuntu-cloud-service-broker -c ${this_directory}/ubuntu-with-github-release/pipeline.yml -l ${this_directory}/ubuntu-cloud-service-broker/config.yml --non-interactive

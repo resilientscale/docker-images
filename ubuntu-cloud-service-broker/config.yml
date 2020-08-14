@@ -1,0 +1,6 @@
+---
+base_image_name: "rscale/ubuntu-jq"
+image_name: "ubuntu-cloud-service-broker"
+
+github_release_owner: pivotal
+github_release_repository: cloud-service-broker

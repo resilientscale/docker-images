@@ -1,0 +1,6 @@
+---
+base_image_name: "rscale/ubuntu-make"
+image_name: "ubuntu-docker"
+
+github_release_owner: docker
+github_release_repository: docker-ce

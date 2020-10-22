@@ -23,7 +23,6 @@ resources:
   type: git
   source:
     uri: https://github.com/resilientscale/docker-images.git
-    branch: master
     username: ((github_username))
     password: ((github_password))
     paths: [((image_name))/Dockerfile]
@@ -33,7 +32,6 @@ resources:
   type: git
   source:
     uri: https://github.com/resilientscale/docker-images.git
-    branch: master
     username: ((github_username))
     password: ((github_password))
     paths: [ubuntu-with-github-release/tasks/*]

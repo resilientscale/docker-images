@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tag=$(cat git-tag/tag)
+tag=$(cat git-tag/.git/ref)
 
 tag="${tag//v}"
 

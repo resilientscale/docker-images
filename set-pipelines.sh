@@ -42,4 +42,4 @@ fly -t $target sp -p ubuntu-gcp-service-broker -c ${this_directory}/ubuntu-with-
 
 fly -t $target sp -p ubuntu-cloud-service-broker -c ${this_directory}/ubuntu-with-github-release/pipeline.yml -l ${this_directory}/ubuntu-cloud-service-broker/config.yml --non-interactive
 
-fly -t $target sp -p ubuntu-make -c ${this_directory}/ubuntu-with-github-release/pipeline.yml -l ${this_directory}/ubuntu-make/config.yml --non-interactive
+fly -t $target sp -p ubuntu-make -c ${this_directory}/ubuntu-with-git-tag/pipeline.yml -l ${this_directory}/ubuntu-make/config.yml --non-interactive

@@ -16,4 +16,4 @@ outputs:
 - name: tag_file
 
 run:
-  path: tasks/ubuntu-with-github-release/tasks/prepare-envars.sh
+  path: tasks/ubuntu-with-git-tags/tasks/prepare-envars.sh

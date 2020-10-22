@@ -1,0 +1,6 @@
+---
+base_image_name: "rscale/ubuntu-jq"
+image_name: "ubuntu-make"
+
+github_release_owner: mirror
+github_release_repository: make

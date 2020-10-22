@@ -34,7 +34,7 @@ resources:
     uri: https://github.com/resilientscale/docker-images.git
     username: ((github_username))
     password: ((github_password))
-    paths: [ubuntu-with-github-release/tasks/*]
+    paths: [ubuntu-with-git-tags/tasks/*]
   check_every: 60m
 
 - name: git-tag

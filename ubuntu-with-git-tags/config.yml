@@ -1,0 +1,6 @@
+---
+base_image_name: "rscale/ubuntu-base" # The name of the base image  as specified in the Dockerfile. Used to trigger new builds when the base image updates.
+image_name: # The name of the new image being built
+
+git_repository_uri: # The uri of the repository
+tag_filter: # The tag filter glob pattern to trigger new versions on

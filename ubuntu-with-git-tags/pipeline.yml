@@ -1,0 +1,90 @@
+---
+
+resource_types:
+
+- name: slack-notification
+  type: docker-image
+  source:
+    repository: cfcommunity/slack-notification-resource
+
+resources:
+
+- name: slack
+  type: slack-notification
+  source:
+    url: ((slack_webhook_url))
+
+- name: base-image
+  type: docker-image
+  source:
+    repository: ((base_image_name))
+
+- name: dockerfile
+  type: git
+  source:
+    uri: https://github.com/resilientscale/docker-images.git
+    username: ((github_username))
+    password: ((github_password))
+    paths: [((image_name))/Dockerfile]
+  check_every: 60m
+
+- name: tasks
+  type: git
+  source:
+    uri: https://github.com/resilientscale/docker-images.git
+    username: ((github_username))
+    password: ((github_password))
+    paths: [ubuntu-with-github-release/tasks/*]
+  check_every: 60m
+
+- name: git-tag
+  type: git
+  source:
+    uri: ((git_repository_uri))
+    username: ((github_username))
+    password: ((github_password))
+    tag_filter: ((tag_filter))
+  check_every: 60m
+
+- name: docker-image
+  type: docker-image
+  source:
+    repository: rscale/((image_name))
+    username: ((docker_hub_user))
+    password: ((docker_hub_password))
+
+jobs:
+- name: build
+  serial_groups: [release]
+  plan:
+  - in_parallel:
+    - get: base-image
+      trigger: true
+    - get: dockerfile
+      trigger: true
+      params: {depth: 1}
+    - get: git-tag
+      trigger: true
+      params: {depth: 1}
+    - get: tasks
+      params: {depth: 1}
+  - task: prepare-envars
+    file: tasks/ubuntu-with-github-release/tasks/prepare-envars.yml
+  - put: docker-image
+    params:
+      build: dockerfile/((image_name))
+      build_args_file: envars/env.json
+      labels_file: envars/env.json
+      tag_file: tag_file/tag
+      tag_as_latest: true
+    on_success:
+      put: slack
+      params:
+        username: "rscale-ci"
+        text: "SUCCESS: New ((image_name)) image published to docker hub at rscale/((image_name)). (https://ci.aws.rscale.io/teams/docker-images/pipelines/((image_name)))"
+    on_failure:
+      put: slack
+      params: 
+        username: "rscale-ci"
+        text: "FAILURE: Creation of new ((image_name)) image failed. (https://ci.aws.rscale.io/teams/docker-images/pipelines/((image_name)))"
+  

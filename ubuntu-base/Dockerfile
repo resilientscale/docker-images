@@ -3,5 +3,4 @@ FROM ubuntu
 RUN apt update && \
 	apt-get install -y curl \
 	zip \
-	ssh \
-	scp
+	ssh 

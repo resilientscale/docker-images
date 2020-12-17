@@ -28,8 +28,6 @@ fly -t $target sp -p ubuntu-cf6 -c ${this_directory}/ubuntu-with-github-release/
 
 fly -t $target sp -p ubuntu-cf -c ${this_directory}/ubuntu-with-github-release/pipeline.yml -l ${this_directory}/ubuntu-cf/config.yml --non-interactive
 
-fly -t $target sp -p ubuntu-go -c ${this_directory}/ubuntu-go/pipeline.yml -l ${this_directory}/ubuntu-go/config.yml --non-interactive
-
 fly -t $target sp -p ubuntu-hugo -c ${this_directory}/ubuntu-with-github-release/pipeline.yml -l ${this_directory}/ubuntu-hugo/config.yml --non-interactive
 
 fly -t $target sp -p ubuntu-hugo-extended -c ${this_directory}/ubuntu-with-github-release/pipeline.yml -l ${this_directory}/ubuntu-hugo-extended/config.yml --non-interactive
@@ -43,4 +41,7 @@ fly -t $target sp -p ubuntu-gcp-service-broker -c ${this_directory}/ubuntu-with-
 fly -t $target sp -p ubuntu-cloud-service-broker -c ${this_directory}/ubuntu-with-github-release/pipeline.yml -l ${this_directory}/ubuntu-cloud-service-broker/config.yml --non-interactive
 
 fly -t $target sp -p ubuntu-make -c ${this_directory}/ubuntu-with-git-tags/pipeline.yml -l ${this_directory}/ubuntu-make/config.yml --non-interactive
+
+
+fly -t $target sp -p ubuntu-bosh-cli -c ${this_directory}/ubuntu-with-git-tags/pipeline.yml -l ${this_directory}/ubuntu-bosh-cli/config.yml --non-interactive
 

@@ -1,0 +1,6 @@
+---
+base_image_name: "rscale/ubuntu-bosh-cli"
+image_name: "ubuntu-control-tower"
+
+github_release_owner: EngineerBetter
+github_release_repository: control-tower

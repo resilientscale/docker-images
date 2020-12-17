@@ -43,5 +43,5 @@ fly -t $target sp -p ubuntu-cloud-service-broker -c ${this_directory}/ubuntu-wit
 fly -t $target sp -p ubuntu-make -c ${this_directory}/ubuntu-with-git-tags/pipeline.yml -l ${this_directory}/ubuntu-make/config.yml --non-interactive
 
 
-fly -t $target sp -p ubuntu-bosh-cli -c ${this_directory}/ubuntu-with-git-tags/pipeline.yml -l ${this_directory}/ubuntu-bosh-cli/config.yml --non-interactive
+fly -t $target sp -p ubuntu-bosh-cli -c ${this_directory}/ubuntu-with-github-release/pipeline.yml -l ${this_directory}/ubuntu-bosh-cli/config.yml --non-interactive
 

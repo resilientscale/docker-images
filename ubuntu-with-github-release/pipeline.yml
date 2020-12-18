@@ -25,7 +25,7 @@ resources:
     uri: https://github.com/resilientscale/docker-images.git
     username: ((github_username))
     password: ((github_password))
-    paths: [((image_name))/Dockerfile]
+    paths: [((image_name))/Dockerfile, ((image_name))/includes/*]
   check_every: 60m
 
 - name: tasks

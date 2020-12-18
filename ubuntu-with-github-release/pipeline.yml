@@ -26,7 +26,6 @@ resources:
     username: ((github_username))
     password: ((github_password))
     paths: [((image_name))/Dockerfile, ((image_name))/includes/*]
-  check_every: 60m
 
 - name: tasks
   type: git
@@ -35,7 +34,6 @@ resources:
     username: ((github_username))
     password: ((github_password))
     paths: [ubuntu-with-github-release/tasks/*]
-  check_every: 60m
 
 - name: release
   type: github-release
@@ -43,7 +41,6 @@ resources:
     owner: ((github_release_owner))
     repository: ((github_release_repository))
     access_token: ((github_password))
-  check_every: 60m
 
 - name: docker-image
   type: docker-image

@@ -9,6 +9,6 @@ RUN mkdir /home/tutorial && \
 	echo 'export PS1="$ "' >> /root/.bashrc && \
 	echo './.setup.sh' >> /root/.bashrcz
 
-ADD ./setup.sh /home/tutorial/.setup.sh
+ADD ./includes/setup.sh /home/tutorial/.setup.sh
 
 WORKDIR /home/tutorial

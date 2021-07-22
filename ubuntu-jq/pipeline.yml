@@ -81,10 +81,10 @@ jobs:
       put: slack
       params:
         username: "rscale-ci"
-        text: "SUCCESS: New ubuntu-jq image published to docker hub at rscale/ubuntu-jq. (https://ci.aws.rscale.io/teams/docker-images/pipelines/ubuntu-jq)"
+        text: "SUCCESS: New ubuntu-jq image published to docker hub at rscale/ubuntu-jq. (https://ci.rscale.dev/teams/docker-images/pipelines/ubuntu-jq)"
     on_failure:
       put: slack
       params: 
         username: "rscale-ci"
-        text: "FAILURE: Creation of new ubuntu-jq image failed. (https://ci.aws.rscale.io/teams/docker-images/pipelines/ubuntu-jq)"
+        text: "FAILURE: Creation of new ubuntu-jq image failed. (https://ci.rscale.dev/teams/docker-images/pipelines/ubuntu-jq)"
   

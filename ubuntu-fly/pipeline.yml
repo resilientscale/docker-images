@@ -81,10 +81,10 @@ jobs:
       put: slack
       params:
         username: "rscale-ci"
-        text: "SUCCESS: New ubuntu-fly image published to docker hub at rscale/ubuntu-fly. (https://ci.aws.rscale.io/teams/docker-images/pipelines/ubuntu-fly)"
+        text: "SUCCESS: New ubuntu-fly image published to docker hub at rscale/ubuntu-fly. (https://ci.rscale.dev/teams/docker-images/pipelines/ubuntu-fly)"
     on_failure:
       put: slack
       params: 
         username: "rscale-ci"
-        text: "FAILURE: Creation of new ubuntu-fly image failed. (https://ci.aws.rscale.io/teams/docker-images/pipelines/ubuntu-fly)"
+        text: "FAILURE: Creation of new ubuntu-fly image failed. (https://ci.rscale.dev/teams/docker-images/pipelines/ubuntu-fly)"
   

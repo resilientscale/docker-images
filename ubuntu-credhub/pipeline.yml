@@ -81,10 +81,10 @@ jobs:
       put: slack
       params:
         username: "rscale-ci"
-        text: "SUCCESS: New ubuntu-credhub image published to docker hub at rscale/ubuntu-credhub. (https://ci.aws.rscale.io/teams/docker-images/pipelines/ubuntu-credhub)"
+        text: "SUCCESS: New ubuntu-credhub image published to docker hub at rscale/ubuntu-credhub. (https://ci.rscale.dev/teams/docker-images/pipelines/ubuntu-credhub)"
     on_failure:
       put: slack
       params: 
         username: "rscale-ci"
-        text: "FAILURE: Creation of new ubuntu-credhub image failed. (https://ci.aws.rscale.io/teams/docker-images/pipelines/ubuntu-credhub)"
+        text: "FAILURE: Creation of new ubuntu-credhub image failed. (https://ci.rscale.dev/teams/docker-images/pipelines/ubuntu-credhub)"
   

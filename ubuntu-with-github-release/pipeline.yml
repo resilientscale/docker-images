@@ -76,10 +76,10 @@ jobs:
       put: slack
       params:
         username: "rscale-ci"
-        text: "SUCCESS: New ((image_name)) image published to docker hub at rscale/((image_name)). (https://ci.aws.rscale.io/teams/docker-images/pipelines/((image_name)))"
+        text: "SUCCESS: New ((image_name)) image published to docker hub at rscale/((image_name)). (https://ci.rscale.dev/teams/docker-images/pipelines/((image_name)))"
     on_failure:
       put: slack
       params: 
         username: "rscale-ci"
-        text: "FAILURE: Creation of new ((image_name)) image failed. (https://ci.aws.rscale.io/teams/docker-images/pipelines/((image_name)))"
+        text: "FAILURE: Creation of new ((image_name)) image failed. (https://ci.rscale.dev/teams/docker-images/pipelines/((image_name)))"
   

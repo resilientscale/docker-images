@@ -52,10 +52,10 @@ jobs:
       put: slack
       params:
         username: "rscale-ci"
-        text: "SUCCESS: New ubuntu-base image published to docker hub at rscale/ubuntu-base. (https://ci.aws.rscale.io/teams/docker-images/pipelines/ubuntu-base)"
+        text: "SUCCESS: New ubuntu-base image published to docker hub at rscale/ubuntu-base. (https://ci.rscale.dev/teams/docker-images/pipelines/ubuntu-base)"
     on_failure:
       put: slack
       params: 
         username: "rscale-ci"
-        text: "FAILURE: Creation of new ubuntu-base image failed. (https://ci.aws.rscale.io/teams/docker-images/pipelines/ubuntu-base)"
+        text: "FAILURE: Creation of new ubuntu-base image failed. (https://ci.rscale.dev/teams/docker-images/pipelines/ubuntu-base)"
   

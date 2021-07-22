@@ -11,15 +11,16 @@ this_directory=$(dirname "$0")
 
 
 
-fly -t $target sp -p ubuntu-base -c ${this_directory}/ubuntu-base/pipeline.yml --non-interactive
+# Moved to terraform
+# fly -t $target sp -p ubuntu-base -c ${this_directory}/ubuntu-base/pipeline.yml --non-interactive
 
-fly -t $target sp -p ubuntu-jq -c ${this_directory}/ubuntu-jq/pipeline.yml --non-interactive
+# fly -t $target sp -p ubuntu-jq -c ${this_directory}/ubuntu-jq/pipeline.yml --non-interactive
 
-fly -t $target sp -p ubuntu-yq -c ${this_directory}/ubuntu-yq/pipeline.yml --non-interactive
+# fly -t $target sp -p ubuntu-yq -c ${this_directory}/ubuntu-yq/pipeline.yml --non-interactive
 
-fly -t $target sp -p ubuntu-fly -c ${this_directory}/ubuntu-fly/pipeline.yml --non-interactive
+# fly -t $target sp -p ubuntu-fly -c ${this_directory}/ubuntu-fly/pipeline.yml --non-interactive
 
-fly -t $target sp -p ubuntu-credhub -c ${this_directory}/ubuntu-credhub/pipeline.yml --non-interactive
+# fly -t $target sp -p ubuntu-credhub -c ${this_directory}/ubuntu-credhub/pipeline.yml --non-interactive
 
 
 fly -t $target sp -p ubuntu-linkcheck -c ${this_directory}/ubuntu-with-github-release/pipeline.yml -l ${this_directory}/ubuntu-linkcheck/config.yml --non-interactive

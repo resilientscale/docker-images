@@ -4,4 +4,5 @@ RUN apt update && \
 	apt-get install -y curl \
 	zip \
 	ssh \
-	openssh-client
+	openssh-client \
+	git

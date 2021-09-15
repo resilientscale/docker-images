@@ -34,7 +34,7 @@ fly -t $target sp -p ubuntu-hugo -c ${this_directory}/ubuntu-with-github-release
 fly -t $target sp -p ubuntu-hugo-extended -c ${this_directory}/ubuntu-with-github-release/pipeline.yml -l ${this_directory}/ubuntu-hugo-extended/config.yml --non-interactive
 
 
-fly -t $target sp -p katacoda-staging-trycf -c ${this_directory}/ubuntu-with-github-release/pipeline.yml -l ${this_directory}/katacoda-staging-trycf/config.yml --non-interactive
+fly -t $target sp -p katacoda-trycf -c ${this_directory}/ubuntu-with-github-release/pipeline.yml -l ${this_directory}/katacoda-trycf/config.yml --non-interactive
 
 
 fly -t $target sp -p ubuntu-gcp-service-broker -c ${this_directory}/ubuntu-with-github-release/pipeline.yml -l ${this_directory}/ubuntu-gcp-service-broker/config.yml --non-interactive

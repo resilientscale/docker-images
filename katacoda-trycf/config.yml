@@ -1,6 +1,6 @@
 ---
 base_image_name: "rscale/ubuntu-cf" 
-image_name: "katacoda-staging-trycf"
+image_name: "katacoda-trycf"
 
 github_release_owner: cloudfoundry-tutorials
 github_release_repository: sample-app

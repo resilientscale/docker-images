@@ -42,7 +42,7 @@ resources:
 - name: yq-release
   type: github-release
   source:
-    owner: mikefarah
+    owner: kislyuk
     repository: yq
     access_token: ((github_password))
   check_every: 60m

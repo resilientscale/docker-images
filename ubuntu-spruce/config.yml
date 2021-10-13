@@ -1,0 +1,6 @@
+---
+base_image_name: "rscale/ubuntu-yq" 
+image_name: "ubuntu-spruce"
+
+github_release_owner: geofffranks
+github_release_repository: spruce

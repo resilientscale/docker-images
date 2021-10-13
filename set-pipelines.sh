@@ -47,3 +47,10 @@ fly -t $target sp -p ubuntu-make -c ${this_directory}/ubuntu-with-git-tags/pipel
 fly -t $target sp -p ubuntu-bosh-cli -c ${this_directory}/ubuntu-with-github-release/pipeline.yml -l ${this_directory}/ubuntu-bosh-cli/config.yml --non-interactive
 
 fly -t $target sp -p ubuntu-control-tower -c ${this_directory}/ubuntu-with-github-release/pipeline.yml -l ${this_directory}/ubuntu-control-tower/config.yml --non-interactive
+
+
+
+fly -t $target sp -p ubuntu-fly -c ${this_directory}/ubuntu-fly/pipeline.yml --non-interactive
+
+
+fly -t $target sp -p ubuntu-spruce -c ${this_directory}/ubuntu-with-github-release/pipeline.yml -l ${this_directory}/ubuntu-spruce/config.yml --non-interactive

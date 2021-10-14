@@ -1,4 +1,4 @@
-FROM rscale/ubuntu-yq
+FROM rscale/ubuntu-fly
 
 ARG VERSION
 

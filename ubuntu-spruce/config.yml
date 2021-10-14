@@ -1,5 +1,5 @@
 ---
-base_image_name: "rscale/ubuntu-yq" 
+base_image_name: "rscale/ubuntu-fly" 
 image_name: "ubuntu-spruce"
 
 github_release_owner: geofffranks

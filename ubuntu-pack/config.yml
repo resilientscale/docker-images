@@ -1,0 +1,6 @@
+---
+base_image_name: "docker" 
+image_name: "ubuntu-pack"
+
+github_release_owner: buildpacks
+github_release_repository: pack

@@ -1,0 +1,6 @@
+---
+base_image_name: "owasp/zap2docker-stable" 
+image_name: "owasp-zap-plus"
+
+github_release_owner: zaproxy
+github_release_repository: zaproxy

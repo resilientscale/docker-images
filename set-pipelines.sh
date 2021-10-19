@@ -54,3 +54,6 @@ fly -t $target sp -p ubuntu-fly -c ${this_directory}/ubuntu-fly/pipeline.yml --n
 
 
 fly -t $target sp -p ubuntu-spruce -c ${this_directory}/ubuntu-with-github-release/pipeline.yml -l ${this_directory}/ubuntu-spruce/config.yml --non-interactive
+
+
+fly -t $target sp -p owasp-zap-plus -c ${this_directory}/ubuntu-with-github-release/pipeline.yml -l ${this_directory}/owasp-zap-plus/config.yml --non-interactive

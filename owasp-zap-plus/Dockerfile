@@ -9,3 +9,5 @@ RUN mkdir -p /home/zap/bin && \
 	pip install yq 
 
 ENV PATH="/home/zap/bin:/home/zap/.local/bin:${PATH}"
+
+USER root

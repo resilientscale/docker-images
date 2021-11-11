@@ -1,4 +1,4 @@
-FROM rscale/ubuntu-jq
+FROM rscale/ubuntu-yq
 
 ARG VERSION
 

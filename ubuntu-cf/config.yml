@@ -1,5 +1,5 @@
 ---
-base_image_name: "rscale/ubuntu-jq" 
+base_image_name: "rscale/ubuntu-yq" 
 image_name: "ubuntu-cf"
 
 github_release_owner: cloudfoundry

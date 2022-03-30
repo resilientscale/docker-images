@@ -1,0 +1,6 @@
+---
+base_image_name: "clamav/clamav@latest" 
+image_name: "clamav-clamscan-plus"
+
+github_release_owner: clamav
+github_release_repository: clamav
